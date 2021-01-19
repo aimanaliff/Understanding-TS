@@ -23,6 +23,7 @@ var Role;
     Role[Role["AUTHOR"] = 2] = "AUTHOR";
 })(Role || (Role = {}));
 ;
+// enum Role { ADMIN = 5, READ_ONLY, AUTHOR = 200 }; //can store anything
 var person = {
     name: 'Aliff',
     age: 21,
