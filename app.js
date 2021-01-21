@@ -1,46 +1,21 @@
-// const person: {
-//     name: string;
-//     age: number;
-// } = {
-// const person: {
-//     name: string;
-//     age: number;
-//     hobbies: string[];
-//     role: [number, string]; //tuple: fixed-length array with fixed type
-// } = {
-//     name: 'Aliff',
-//     age: 21,
-//     hobbies: ['Sports', 'Cooking'],
-//     role: [2, 'author']
-// };
-// const ADMIN = 0;
-// const READ_ONLY = 1;
-// const AUTHOR = 2;
-var Role;
-(function (Role) {
-    Role[Role["ADMIN"] = 0] = "ADMIN";
-    Role[Role["READ_ONLY"] = 1] = "READ_ONLY";
-    Role[Role["AUTHOR"] = 2] = "AUTHOR";
-})(Role || (Role = {}));
-;
-// enum Role { ADMIN = 5, READ_ONLY, AUTHOR = 200 }; //can store anything
-var person = {
-    name: 'Aliff',
-    age: 21,
-    hobbies: ['Sports', 'Cooking'],
-    role: Role.ADMIN
-};
-// person.role.push('admin'); //.push is an exception in ts
-// person.role[1] = 10; //assigned wrong value
-// person.role = [0, 'admin', 'user']; //error because fixed array length
-var favouriteactivities;
-favouriteactivities = ['Sports'];
-console.log(person.name);
-for (var _i = 0, _a = person.hobbies; _i < _a.length; _i++) {
-    var hobby = _a[_i];
-    console.log(hobby.toUpperCase());
-    // console.log(hobby.map()); // !!! ERROR !!!
+function combine(input1, input2, resultConversion) {
+    var result;
+    if (typeof input1 === 'number' && typeof input2 === 'number' || resultConversion === 'as-number') {
+        result = +input1 + +input2;
+    }
+    else {
+        result = input1.toString() + input2.toString();
+    }
+    return result;
+    // if(resultConversion === 'as-number'){
+    //     return +result;
+    // } else {
+    //     return result.toString();
+    // }
 }
-if (person.role === Role.AUTHOR) {
-    console.log('is author');
-}
+var combinedAges = combine(30, 26, 'as-number');
+console.log(combinedAges);
+var combinedStringAges = combine('30', '26', 'as-number');
+console.log(combinedStringAges);
+var combinedNames = combine('Max', 'Anna', 'as-text');
+console.log(combinedNames);
