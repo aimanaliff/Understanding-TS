@@ -1,13 +1,12 @@
-function add(n1, n2) {
-    return n1 + n2;
+var userInput;
+var userName;
+userInput = 5;
+userInput = 'Aliff';
+if (typeof userInput === 'string') { //typechecker
+    userName = userInput;
 }
-function printResult(num) {
-    console.log('Result: ' + num);
+function generateError(message, code) {
+    throw { message: message, errorCode: code };
 }
-printResult(add(5, 12));
-var combineValues; //makes it clear it needs to run a function
-combineValues = add;
-// combineValues = printResult;
-// combineValues = 5;
-console.log(combineValues(8, 8));
-// let someValue: undefined; //undefined is a value but how useful it is, is another question
+var result = generateError('An error occured!', 500);
+console.log(result);

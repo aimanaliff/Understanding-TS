@@ -1,19 +1,15 @@
-function add(n1: number, n2: number){
-    return n1 + n2;
+let userInput: unknown;
+let userName: string;
+
+userInput = 5;
+userInput = 'Aliff';
+if(typeof userInput === 'string'){ //typechecker
+    userName = userInput;
 }
 
-function printResult(num: number){
-    console.log('Result: ' + num);
+function generateError(message: string, code: number): never { //never function
+    throw {message: message, errorCode: code };
+    // while(true) {} //never returns
 }
 
-printResult(add(5, 12));
-
-let combineValues: (a: number, b: number) => number; //(function types) makes it clear it needs to run a function
-
-combineValues = add;
-// combineValues = printResult;
-// combineValues = 5;
-
-console.log(combineValues(8, 8));
-
-// let someValue: undefined; //undefined is a value but how useful it is, is another question
+generateError('An error occured!', 500);
