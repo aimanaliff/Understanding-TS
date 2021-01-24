@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "lite-server": "^2.6.1"
+    "eslint": "^7.18.0",
+    "lite-server": "^2.6.1",
+    "prettier": "2.2.1"
   }
 }

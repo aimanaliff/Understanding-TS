@@ -1,12 +1,4 @@
-var userInput;
-var userName;
-userInput = 5;
-userInput = 'Aliff';
-if (typeof userInput === 'string') { //typechecker
-    userName = userInput;
-}
-function generateError(message, code) {
-    throw { message: message, errorCode: code };
-}
-var result = generateError('An error occured!', 500);
-console.log(result);
+var button = document.querySelector('button');
+button.addEventListener('click', function () {
+    console.log('Clicked!');
+});
